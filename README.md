@@ -260,6 +260,48 @@ readStream.pipe(writeStream);
 Node.js Crash Course Tutorial #3 - Clients & Servers
 https://www.youtube.com/watch?v=-HPZ1leCV8k&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=3
 
+IP Addresses & Domains
+
+Domains mask IP Addresses
+
+GET Request, to get a resource
+
+via HTTP, Hyper-Text Transfer Protocol
+
+Create a server
+
+with other langs such as PHP, this is done with apache.
+
+
+new folder
+
+server.js
+
+const http = require('http');
+
+const server = http.createServer((request, response) => {
+	console.log('request made');	
+});
+
+server.listen(3000, 'localhost', () => {
+	console.log('listening for requests on port 3000');
+})
+
+
+
+Localhost & Port Numbers
+
+127.0.0.1 Loop back to own computer
+
+port, gate, door. into and out off your computer.
+
+url: localhost:3000
+
+termainal: node server
+
+
+Node.js Crash Course Tutorial #4 - Requests & Responses
+https://www.youtube.com/watch?v=DQD00NAUPNk&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=4
 
 
 <!-- 
