@@ -304,6 +304,105 @@ Node.js Crash Course Tutorial #4 - Requests & Responses
 https://www.youtube.com/watch?v=DQD00NAUPNk&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=4
 
 
+const http = require('http');
+const fs = require('fs');
+
+const server = http.createServer((request, response) => {
+
+console.log(request);
+
+// used for routing
+console.log(request.url);
+console.log(request.method);
+
+console.log(response);
+
+// response headers
+
+// set header content type
+// response.setHeader('Content-Type', 'text/plain');
+response.setHeader('Content-Type', 'text/html');
+
+// response.write('hello world');
+// response.write('<h1>hello world<h1>');
+
+// response.end();
+
+
+let path = './views';
+
+switch(request.url) {
+	case '/':
+		path += 'index.html';
+		response.statusCode = 200;
+		break;
+	case '/about':
+		path += 'about.html';
+		response.statusCode = 200;
+		break;
+	case '/about-me':
+		response.statusCode = 301;
+		response.setHeader('Location', '/about');
+		response.end();
+		break;
+	default:
+		path += '404.html';
+		response.statusCode = 404;
+		break;
+}
+
+// send html file
+fs.readFile(path, (err, data) => {
+	if(err) {
+		console.log(err);
+		response.end();
+	} else {
+
+		response.write(data);
+		response.end();
+		// OR
+		// response.end(data);
+		// does the same thing.
+		
+	}
+})
+
+
+});
+
+
+server.listen(3000, 'localhost', () => {
+	console.log('listening');
+});
+
+
+noder server
+
+IF you make a change to the server file, you will need to cancel out off and restart the server
+
+views folder
+
+index.html file
+
+...
+
+
+Status Codes
+
+200 - OK
+301 - Resource moved
+404 - Not found
+500 - Internal server error
+
+
+Redirects
+
+
+https://www.youtube.com/watch?v=bdHE2wHT-gQ&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=5
+Node.js Crash Course Tutorial #5 - NPM
+
+
+
 <!-- 
 
 - [Node JS Tutorial for Beginners](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp)
