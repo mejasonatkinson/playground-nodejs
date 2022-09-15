@@ -401,7 +401,55 @@ Redirects
 https://www.youtube.com/watch?v=bdHE2wHT-gQ&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=5
 Node.js Crash Course Tutorial #5 - NPM
 
+node core
 
+other node packages can be downloaded by npm
+
+npm is installed with node
+
+lodash
+
+nodemon - Live, refreshable server
+
+npm install -g nodemon 
+
+-g global
+
+nodemon server
+
+package.json
+
+local packages
+
+npm init
+
+npm i --save lodash // old versions of node/npm
+
+npm i lodash
+
+npm install lodash
+
+will see under dependencies
+
+const _ = require('lodash');
+
+const num = _.random(0, 20);
+console.log(num);
+
+dependencies
+
+const greet = _.once(() => {
+	console.log('hello');
+});
+
+
+DONT upload node_modules - because its HUGE!!
+
+npm install
+npm i
+
+https://www.youtube.com/watch?v=Lr9WUkeYSA8&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=6
+Node.js Crash Course Tutorial #6 - Express Apps
 
 <!-- 
 
