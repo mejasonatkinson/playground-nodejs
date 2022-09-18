@@ -493,6 +493,100 @@ app.use((request, response) => {
 
 
 
+https://www.youtube.com/watch?v=yXEesONd_54&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=7
+Node.js Crash Course Tutorial #7 - View Engines
+
+Static, or dynamic data.
+
+Different view engines
+
+- express handlebars
+- pug
+- ejs ***
+
+
+npm install ejs
+
+app.js
+
+const express = require('express');
+
+const app = express ();
+
+// register view engine
+app.set('view engine', 'ejs');
+
+// will look in a views folder by defauly but can be changes
+app.set('views', 'myviews');
+
+// files end with ejs extention index.ejs
+
+
+app.get('/', (request, response) => {
+	const blogs = [
+	{title: 'title', snippet: 'snippet'}
+	]
+	response.render('index', {
+		title: 'home',
+		blogs: blogs
+	});
+})
+
+app.get('/about', (request, response) => {
+	response.render('about', {
+		title: 'about'
+	});
+})
+
+app.get('/blogs/create', (request, response) => {
+	response.render('create', {
+		title: 'create'
+	});
+})
+
+app.use((request, response) => {
+	response.status(404).render('404', {
+		title: '404'
+	});
+})
+
+// passing data to views
+
+ejs tags
+
+<% const name = 'mario'; %>
+<p><%= name %></p> escapes specail charactors. 
+
+<p><%= title %></p> // pass it from the app.js
+
+
+<% if(blogs.length > 0) { %>
+
+<% blogs.forEach(blog => {  %>
+
+<h3><%= blog.title %></h3>
+<p><%= blog.snippet %></p>
+
+<% }) %>
+
+<% } esle { %>
+
+ <p>No blogs to display</p>
+
+<% } %>
+
+Partials
+
+header.ejs
+
+index.ejs
+
+<%- include('./partials/header.ejs') %> // to use html
+
+Adding css
+
+
+
 <!-- 
 
 - [Node JS Tutorial for Beginners](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp)
