@@ -586,6 +586,57 @@ index.ejs
 Adding css
 
 
+https://www.youtube.com/watch?v=_GJKAs7A0_4&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=8
+Node.js Crash Course Tutorial #8 - Middleware
+
+
+What is Middleware?
+
+code which runs on the server between getting a request and sending a response.
+
+.use
+.get
+
+examples
+
+log details,
+authentication
+parse data
+return 404 pages
+
+custom middleware
+
+app.use((request, response, next) => {
+	console.log("middleware #2");
+	console.log(request.hostname);
+	console.log(request.path);
+	console.log(request.method);
+	next();
+});
+
+app.use((request, response, next) => {
+	console.log("middleware #1");
+	next();
+});
+
+
+3rd-party Middleware
+
+https://www.npmjs.com/package/morgan
+
+npm install morgan
+
+const morgan = require('morgan');
+
+app.use(morgan('dev'));
+
+https://www.npmjs.com/package/helmet
+
+// middleware & static files
+app.use(express.static('public')); // don't need to add public to the url of the link
+
+
+
 
 <!-- 
 
