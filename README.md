@@ -636,6 +636,139 @@ https://www.npmjs.com/package/helmet
 app.use(express.static('public')); // don't need to add public to the url of the link
 
 
+Node.js Crash Course Tutorial #9 - MongoDB
+https://www.youtube.com/watch?v=bxsemcrY4gQ&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=9
+
+Database
+
+SQL
+
+tables, rows, columns
+
+NoSQL
+
+collections, documents
+
+mongoDB is a NoSQL database
+
+collections are sort off like tables.
+documents are sort off like records. stored similar to JSON..
+
+
+MongoDB Atlas
+
+Local or cloud based
+
+build cluster
+
+collections
+
+add my own data
+
+database access
+
+add new database user
+
+
+connect to application,
+
+
+app.js
+
+const dbURI = '';
+
+Mongoose
+
+ODM library - Object Document Mapping library
+
+Schema & Models
+
+defines the structure of a type of data / document
+
+npm install mongoose
+
+const mongoose - require('mongoose');
+
+mongoos.connect(dbURI, {userNewUrlParser: true, userUnifiedTopology: true }).then((result,) => {
+console.log('');
+}).catch((err) => {
+console.log('');
+})
+
+models/blog.js
+
+const mongoose - require('mongoose');
+const Schema = mongoos.Schema;
+
+const blogSchema = new Schema({
+title: {
+type: String
+required: true
+},
+snippet: {
+type: String
+required: true
+},
+body: {
+type: String
+required: true
+}, {timestamps: true});
+
+const Blog = mongoose.model('Blog', blogSchema);
+
+module.exports = Blog;
+
+
+getting and saving data
+
+app.js
+
+const Blog = require('./models/blog');
+
+app.get('/add-blog', (req, res) => {
+const blog = new Blog({
+title: '',
+snippet: '',
+body: ''
+})
+
+blog.save().then((result) => {
+res.send(result) // displayed on page
+}).catch((err) => {
+console.log(err);
+})
+})
+
+app.get('/all-blogs', (req, res) => {
+	Blog.find().then((result) => {
+	res.send(result) // displayed on page
+}).catch((err) => {
+console.log(err);
+})
+})
+
+	Blog.findById()
+
+	Blog.find().sort()
+
+outputting
+
+app.get('/blogs', (req, res) => {
+
+Blog.find().then((result) => {
+
+
+res.render('index', { title: 'All Blogs', blogs: result})
+
+
+}).catch((err) => {
+console.log(err);
+})
+
+})
+
+
+
 
 
 <!-- 
