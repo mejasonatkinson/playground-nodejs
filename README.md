@@ -771,6 +771,119 @@ console.log(err);
 
 
 
+
+https://www.youtube.com/watch?v=VVGgacjzc2Y&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=10
+Node.js Crash Course Tutorial #10 - Get, Post & Delete Requests
+
+
+
+Request Types
+
+GET requests to get a resource
+
+route parameters
+
+localhost:3000/blogs/:id
+
+something which could change.
+
+
+
+app.get('/blog/:id', (req, res) => {
+
+const id = req.params.id;
+console.log(id);
+Blog.findById(id)
+.then((result) => {
+
+res.render('details', {blog: result, title: 'blog details' });
+
+}).catch((err) => {
+console.log(err);
+})
+
+
+
+})
+
+
+
+
+
+
+POST requests to create new data
+
+<form action="/blogs" method="POST">
+<input type="text" name="title"> // needs name
+
+app.js
+
+app.use(express.urlencoded({ extended: true }));
+
+
+ap.post('./blogs', (req, res) => {
+
+console.log(req.body);
+const blog = new Blog(req.body);
+
+blog.save().then((result) => {
+res.redirect('/blogs');
+}).catch((err) => {
+console.log(err);
+})
+
+})
+
+DELETE requests to delete data
+
+<a class="delete" data-doc="<%= blog._id %>">delete</a>
+
+<script>
+
+
+const trashcan = document.querySelect('a.delete');
+trashcan.addEventListern('click', (e) => {
+const endpoint = `/blogs/${trashcan.dataset.doc}`;
+
+fetch(endpoit, {
+method: 'DELETE'
+}).then((response) => {
+
+}).catch((err) => {
+
+console.log(err);
+})
+
+})
+
+
+</script>
+
+app.js
+
+app.delete('/blogs/:id', (req, res) => {
+
+const id = req.params.id;
+
+
+
+Blog.findByIdAnd Delete(Id).then((result) => {
+res.json({ redirect: '/blogs' })
+}).catch((err) => {
+console.log(err);
+})
+
+})
+
+
+PUT requests to update data
+
+
+LOST???
+
+
+
+
 <!-- 
 
 - [Node JS Tutorial for Beginners](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp)
