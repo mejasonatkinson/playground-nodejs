@@ -884,6 +884,52 @@ LOST???
 
 
 
+https://www.youtube.com/watch?v=zW_tZR0Ir3Q&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=11
+Node.js Crash Course Tutorial #11 - Express Router & MVC
+
+Split routes,
+
+routes/blogroutes.js
+
+const express = require('express');
+
+const router = express.router();
+
+router.get('/blogs', (req, res) => {
+
+})
+
+
+module.exports = router;
+
+app.js
+
+const blogRoutes - require('./routes/blogroutes.js');
+
+
+app.use(blogRoutes);
+
+
+MVC Basics
+
+Model, View, Controllers
+
+structuring our code & files
+
+
+keeps code more modular, reusable & easier to read
+
+controllers.
+the middle between model, view
+
+controller functions
+
+// blog_index, blog_details, blog_create_get, blog_create_post, blog_delete
+
+LOST?
+
+
+
 <!-- 
 
 - [Node JS Tutorial for Beginners](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp)
