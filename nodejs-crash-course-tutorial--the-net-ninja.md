@@ -2,19 +2,18 @@
 
 ## [Node.js Crash Course Tutorial #1 - Introduction & Setup](https://www.youtube.com/watch?v=zb3Qk8SG5Ms&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=1)
 
-<!--
-
 This is an updated nodejs playlist
 
 Front-end (browser)
 
 Back-end (back-end)
+
 Node allows, JS to work on the backend.
 
--> JavaScript
--> C++
--> Assembly Language
--> Machine code
+- JavaScript
+- C++
+- Assembly Language
+- Machine code
 
 Machine code can not understand JavaScript on its own.
 
@@ -27,10 +26,12 @@ Node.js is written in C++ and is used to run V8 Engine, AND adds more features t
 - Connect to a database
 - Act as a server for content
 
--> NodeJS(JavaScript)
--> C++
--> Assembly Language
--> Machine code
+
+
+- NodeJS(JavaScript)
+- C++
+- Assembly Language
+- Machine code
 
 Node.js, you can use instead of python, php etc...
 
@@ -72,7 +73,7 @@ terminal
 
 node test
 
-https://github.com/iamshaunjp/node-crash-course
+Code for the lessons here: https://github.com/iamshaunjp/node-crash-course
 
 -->
 
@@ -934,6 +935,6 @@ LOST?
 
 ## [Node.js Crash Course Tutorial #12 - Wrap up](https://www.youtube.com/watch?v=nYAyhRAV87A&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=12)
 
-- This was beginer course, to help progress to more advanced subjects such as:
+- This was a beginner course, to help progress to more advanced subjects such as:
 
 **[Node.js Auth Tutorial (JWT)](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp)**
