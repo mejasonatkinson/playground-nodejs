@@ -2,14 +2,15 @@
 
 A place to learn more about Node JS, and try things.
 
-10/09/22 -
+10/09/22 - 22/09/22
+
+## Notes
+
+- [Node.js Crash Course Tutorial; The Net Ninja](nodejs-crash-course-tutorial--the-net-ninja.md))
 
 ## Resources
 
 - [Node.js Crash Course Tutorial; The Net Ninja](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU)
-
-
-
 
 <!-- 
 
