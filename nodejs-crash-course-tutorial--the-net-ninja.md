@@ -935,6 +935,4 @@ LOST?
 
 ## [Node.js Crash Course Tutorial #12 - Wrap up](https://www.youtube.com/watch?v=nYAyhRAV87A&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=12)
 
-- This was a beginner course, to help progress to more advanced subjects such as:
-
-**[Node.js Auth Tutorial (JWT)](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp)**
+This was a beginner course, to help progress to more advanced subjects such as: **[Node.js Auth Tutorial (JWT)](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp)**
