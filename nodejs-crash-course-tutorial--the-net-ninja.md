@@ -27,7 +27,6 @@ Node.js is written in C++ and is used to run V8 Engine, AND adds more features t
 - Act as a server for content
 
 
-
 - NodeJS(JavaScript)
 - C++
 - Assembly Language
@@ -43,39 +42,30 @@ Need to know:
 Installing node
 
 command promt
-node -v
+
+`node -v`
 
 nodejs.org, download and install if you don't have it installed.
 
-node
+`cd {file path}`
 
-going to usee visual studio code...
+`mkdir {name}`
 
-ctrl + c, ctrl + c, 
+`cd {name}`
 
-cd {file path}
-
-mkdir {name}
-
-cd {name}
-
-code .
-
-new file
-
+`code .`
 
 test.js
 
-const name = 'mario';
-console.log(name);
+`const name = 'mario';`
+`console.log(name);`
 
 terminal
 
-node test
+`node test`
 
-Code for the lessons here: https://github.com/iamshaunjp/node-crash-course
+Code for the lessons can be found here: https://github.com/iamshaunjp/node-crash-course
 
--->
 
 ## [Node.js Crash Course Tutorial #2 - Node.js Basics](https://www.youtube.com/watch?v=OIBIXYLJjsI&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=2)
 
