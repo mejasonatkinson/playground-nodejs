@@ -6,66 +6,31 @@ This is an updated nodejs playlist
 
 Front-end (browser)
 
-Back-end (back-end)
+Back-end (server)
 
-Node allows, JS to work on the backend.
+Node allows, JS to work on the back-end.
 
 - JavaScript
 - C++
 - Assembly Language
 - Machine code
 
-Machine code can not understand JavaScript on its own.
-
-BUT browsers understand javascript
-AND some browsers use an engine to help run javascript called the V8 Engine, which is written in C++
+Machine code can not understand JavaScript on its own BUT browsers understand javascript AND some browsers use an engine to help run javascript called the V8 Engine, which is written in C++
 
 Node.js is written in C++ and is used to run V8 Engine, AND adds more features to JavaScript including:
 
 - Read & write files on a computer
-- Connect to a database
+- Ability to connect to a database
 - Act as a server for content
 
+Node.js, can be used instead of python or php...
 
-- NodeJS(JavaScript)
-- C++
-- Assembly Language
-- Machine code
-
-Node.js, you can use instead of python, php etc...
-
-Need to know:
+What you need to know first:
 
 - JavaScript (functions, async code, promises etc)
 - HTML & CSS
 
-Installing node
-
-command promt
-
-`node -v`
-
-nodejs.org, download and install if you don't have it installed.
-
-`cd {file path}`
-
-`mkdir {name}`
-
-`cd {name}`
-
-`code .`
-
-test.js
-
-`const name = 'mario';`
-`console.log(name);`
-
-terminal
-
-`node test`
-
-Code for the lessons can be found here: https://github.com/iamshaunjp/node-crash-course
-
+[Code for the lessons can be found here](https://github.com/iamshaunjp/node-crash-course)
 
 ## [Node.js Crash Course Tutorial #2 - Node.js Basics](https://www.youtube.com/watch?v=OIBIXYLJjsI&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=2)
 
