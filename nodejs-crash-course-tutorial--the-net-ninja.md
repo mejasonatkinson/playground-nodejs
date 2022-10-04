@@ -34,80 +34,35 @@ What you need to know first:
 
 ## [Node.js Crash Course Tutorial #2 - Node.js Basics](https://www.youtube.com/watch?v=OIBIXYLJjsI&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=2)
 
-<!--
-
-Node serve, to handle, requests
-
-const great = (name) => {
-	console.log('hello, ${name}');
-}
-
-great('mario');
-
-The Global Object
+**The Global Object**
 
 In a browser you have the window object
 
 In node you have the global object
 
-console.log(global);
+`console.log(global);` will show you all the things you have access to using the global object.
 
-global.setTimeout(() => {
-console.log('in the timeout');
-}, 3000)
+File paths; node, also gives us access to 2 types of file paths
 
-const int = setTimeout(() => {
-console.log('in the timeout');
-}, 3000);
+`console.log(__dirname);` which is a absolute path
 
-setInterval();
-
-ctrl + c
-
-clearInterval(int);
-
-console.log(__dirname); // absolute path
-console.log(__filename); // absolute path + file name
+`console.log(__filename);` which is a absolute path + file name
 
 Modules & Require
 
-import/export files.
+Modules, is away of describing when you use multiple files to seperate concerns, then use export and import commands to use them together.
+<!-- Not sure if I like this description? -->
 
-multiple files
+You can import a file using the require function, for example:
 
-modules
+`const xyz = require('./xyz');`
 
-const xyz = require('./people');
+or you can access certain things within the file:
 
-console.log(xyz)
-
-console.log(xyz.people, xyz.ages);
-
-OR
-
-const { people, ages } = require('./people');
-
-console.log(people, ages);
+`const { x, y, x } = require('./xyz');`
 
 
-const os = require('os');
-
-console.log(os);
-
-
-
-people
-
-const people = ['jason']
-const ages = [31]
-
-module.exports = 'hello'
-
-module.exports = {
-	people: people,
-	ages: ages,
-};
-
+<!--
 
 the file system
 
@@ -207,6 +162,7 @@ writeStream.write(chunk);
 readStream.pipe(writeStream);
 
 -->
+
 
 ## [Node.js Crash Course Tutorial #3 - Clients & Servers](https://www.youtube.com/watch?v=-HPZ1leCV8k&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=3)
 
