@@ -82,62 +82,17 @@ Allows you to create directories
 
 <!-- How to do multiple line code blocks in markdown -->
 
-<!--
+Allows you to delete files
 
-// delete  files
+`if( fs.existsSync('./assets/deleteme.txt') ) { fs.unlick('./assets/deleteme.txt', (err) => { if(err) { console.log(err); } else { console.log('complete'); } } ) }`
 
-if(fs.existsSync('./assets/deleteme.txt')) {
+**Streams & Buffers**
 
-fs.unlick('./assets/deleteme.txt', (err) => {
-if(err) {
-	console.log(err);
-}
-	console.log('complete');
+What do you do if there is alot of data?
 
-})
+Streams allows you to start using data, before it has finished downloading by sending buffers.
 
-}
-
-Streams & Buffers
-
-what if there is alot of data
-
-Streams
-
-Start using data, before it has finished loading.
-
-sending, buffers.
-
-read stream
-
-write stream
-
-stream.js
-
-const fs = require('fs');
-
-const readStream = fs.createReadStream('./doc/blog.txt', {encoding: 'utf8'});
-
-const writeStream = fs.createWriteStream('./doc/new.txt');
-
-readStream.on('data', (chunk) => {
-
-// event listener
-console.log('------------------');
-console.log(chunk);
-console.log(chunk.toString()); // or encoding
-console.log('------------------');
-
-writeStream('\nNEW CHUNK\n');
-writeStream.write(chunk);
-
-})
-
-// piping
-readStream.pipe(writeStream);
-
--->
-
+You can create Read or Write streams.
 
 ## [Node.js Crash Course Tutorial #3 - Clients & Servers](https://www.youtube.com/watch?v=-HPZ1leCV8k&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=3)
 
