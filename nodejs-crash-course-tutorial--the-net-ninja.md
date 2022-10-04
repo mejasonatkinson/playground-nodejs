@@ -48,7 +48,7 @@ File paths; node, also gives us access to 2 types of file paths
 
 `console.log(__filename);` which is a absolute path + file name
 
-Modules & Require
+**Modules & Require**
 
 Modules, is away of describing when you use multiple files to seperate concerns, then use export and import commands to use them together.
 <!-- Not sure if I like this description? -->
@@ -64,50 +64,25 @@ or you can access certain things within the file:
 
 <!--
 
-the file system
+**The file system**
 
-const fs = require('fs');
+`const fs = require('fs');`
 
-// read files
+Allows you to read files
 
-fs.readFile('./file.txt', (err, data) => {
-if(err) {
-console.log(err);
-}
-console.log(data.toString());
+`fs.readFile('./file.txt', (err, data) => { if(err) { console.log(err); } else { console.log(data.toString()); } } );`
 
-})
+Allows you to write files
 
+`fs.writeFile('./file.txt', 'hello, world', () => { console.log('complete'); } );`
 
-// write files
+Allows you to create directories
 
-fs.writeFile('./file.txt', 'hello, world', () => {
-	console.log('complete');
-})
+`if( !fs.existsSync('./assets') ) { fs.mkdir('./assets', (err) => { if(err) { console.log(err); } else { console.log('complete'); } } ); } else { fs.rmdir('./assets', (err) => { if(err) { console.log(err); } else { console.log('complete'); } } ); }`
 
+<!-- How to do multiple line code blocks in markdown -->
 
-// directories
-
-
-if(!fs.existsSync('./assets')) {
-
-fs.mkdir('./assets', (err) => {
-if(err) {
-	console.log(err);
-}
-	console.log('complete');
-})
-
-} else {
-
-fs.rmdir('./assets', (err) => {
-if(err) {
-	console.log(err);
-}
-	console.log('complete');
-})
-
-}
+<!--
 
 // delete  files
 
