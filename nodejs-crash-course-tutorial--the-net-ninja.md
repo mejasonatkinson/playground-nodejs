@@ -151,49 +151,11 @@ You will see lodash under dependencies in the package.json
 
 ## [Node.js Crash Course Tutorial #6 - Express Apps](https://www.youtube.com/watch?v=Lr9WUkeYSA8&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=6)
 
-<!--
-
-Saves you time
-
 https://www.npmjs.com/package/express
 
-npm install express
+`npm i express`
 
-app.js
-
-const express = require('express');
-
-const app = express ();
-
-app.listen(3000);
-
-app.get('/', (request, response) => {
-	// response.send('<h1>Hello World</h1>');
-	response.sendFile('./views/index.html', { root: __dirname });
-	// file // location
-})
-
-app.get('/about', (request, response) => {
-	// response.send('<h1>About Hello World</h1>');
-	response.sendFile('./views/about.html', { root: __dirname });
-	// file // location
-})
-
-
-app.get('/about-us', (request, response) => {
-	response.redirect('/about');
-})
-
-
-// 404 / middleware
-// must be at the bottom of the application
-// AS this runs regardless of page
-app.use((request, response) => {
-	response.status(404).sendFile('./views/404.html', { root: __dirname });
-})
-
--->
-
+`const express = require('express');`
 
 ## [Node.js Crash Course Tutorial #7 - View Engines](https://www.youtube.com/watch?v=yXEesONd_54&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=7)
 
