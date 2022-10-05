@@ -96,48 +96,33 @@ You can create Read or Write streams.
 
 ## [Node.js Crash Course Tutorial #3 - Clients & Servers](https://www.youtube.com/watch?v=-HPZ1leCV8k&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=3)
 
-<!--
-
-IP Addresses & Domains
+**IP Addresses & Domains**
 
 Domains mask IP Addresses
 
-GET Request, to get a resource
+**GET Requests** are used to get a resource via HTTP(Hyper-Text Transfer Protocol)
 
-via HTTP, Hyper-Text Transfer Protocol
+With other languages such as PHP, this is done with apache?
 
-Create a server
+**How to create a server?**
 
-with other langs such as PHP, this is done with apache.
+`server.js`
 
+`const http = require('http');`
 
-new folder
+`const server = http.createServer( (request, response) => { } );`
 
-server.js
+`server.listen( 3000, 'localhost', () => { } );`
 
-const http = require('http');
+**Localhost & Port Numbers**
 
-const server = http.createServer((request, response) => {
-	console.log('request made');	
-});
+The IP, **127.0.0.1** will always Loop back to own computer.
 
-server.listen(3000, 'localhost', () => {
-	console.log('listening for requests on port 3000');
-})
+**PORTS** are gates or doors into and out off your computer.
 
+**URL:** localhost:3000
 
-
-Localhost & Port Numbers
-
-127.0.0.1 Loop back to own computer
-
-port, gate, door. into and out off your computer.
-
-url: localhost:3000
-
-termainal: node server
-
--->
+**Termainal command:** `node server`
 
 ## [Node.js Crash Course Tutorial #4 - Requests & Responses](https://www.youtube.com/watch?v=DQD00NAUPNk&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=4)
 
