@@ -82,6 +82,12 @@ Allows you to create directories
 
 <!-- How to do multiple line code blocks in markdown -->
 
+```
+Multiline();
+Code();
+Block();
+```
+
 Allows you to delete files
 
 `if( fs.existsSync('./assets/deleteme.txt') ) { fs.unlick('./assets/deleteme.txt', (err) => { if(err) { console.log(err); } else { console.log('complete'); } } ) }`
@@ -159,98 +165,53 @@ https://www.npmjs.com/package/express
 
 ## [Node.js Crash Course Tutorial #7 - View Engines](https://www.youtube.com/watch?v=yXEesONd_54&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=7)
 
-<!--
+**Static, or dynamic data**
 
-Static, or dynamic data.
+**View Engines** Similar to how php works..
 
-Different view engines
+`npm i ejs`
 
-- express handlebars
-- pug
-- ejs ***
-
-
-npm install ejs
-
-app.js
-
+```
 const express = require('express');
 
 const app = express ();
 
-// register view engine
 app.set('view engine', 'ejs');
 
-// will look in a views folder by defauly but can be changes
 app.set('views', 'myviews');
+```
 
-// files end with ejs extention index.ejs
+Youn can then pass data to views with ejs tags.
 
-
-app.get('/', (request, response) => {
-	const blogs = [
-	{title: 'title', snippet: 'snippet'}
-	]
-	response.render('index', {
-		title: 'home',
-		blogs: blogs
-	});
-})
-
-app.get('/about', (request, response) => {
-	response.render('about', {
-		title: 'about'
-	});
-})
-
-app.get('/blogs/create', (request, response) => {
-	response.render('create', {
-		title: 'create'
-	});
-})
-
-app.use((request, response) => {
-	response.status(404).render('404', {
-		title: '404'
-	});
-})
-
-// passing data to views
-
-ejs tags
-
+```
 <% const name = 'mario'; %>
+
 <p><%= name %></p> escapes specail charactors. 
 
-<p><%= title %></p> // pass it from the app.js
+<p><%= title %></p>
+```
 
+`=` is needed to escape specail charactors
 
+````
 <% if(blogs.length > 0) { %>
-
 <% blogs.forEach(blog => {  %>
-
 <h3><%= blog.title %></h3>
 <p><%= blog.snippet %></p>
-
 <% }) %>
-
 <% } esle { %>
-
  <p>No blogs to display</p>
-
 <% } %>
+````
 
-Partials
+**Partials**
 
-header.ejs
+`header.ejs`
 
-index.ejs
+`index.ejs`
 
-<%- include('./partials/header.ejs') %> // to use html
+`<%- include('./partials/header.ejs') %>`
 
-Adding css
-
--->
 
 ## [Node.js Crash Course Tutorial #8 - Middleware](https://www.youtube.com/watch?v=_GJKAs7A0_4&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=8)
 
