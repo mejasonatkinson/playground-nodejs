@@ -126,155 +126,28 @@ The IP, **127.0.0.1** will always Loop back to own computer.
 
 ## [Node.js Crash Course Tutorial #4 - Requests & Responses](https://www.youtube.com/watch?v=DQD00NAUPNk&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=4)
 
-<!--
+**Status Codes**
 
-const http = require('http');
-const fs = require('fs');
-
-const server = http.createServer((request, response) => {
-
-console.log(request);
-
-// used for routing
-console.log(request.url);
-console.log(request.method);
-
-console.log(response);
-
-// response headers
-
-// set header content type
-// response.setHeader('Content-Type', 'text/plain');
-response.setHeader('Content-Type', 'text/html');
-
-// response.write('hello world');
-// response.write('<h1>hello world<h1>');
-
-// response.end();
-
-
-let path = './views';
-
-switch(request.url) {
-	case '/':
-		path += 'index.html';
-		response.statusCode = 200;
-		break;
-	case '/about':
-		path += 'about.html';
-		response.statusCode = 200;
-		break;
-	case '/about-me':
-		response.statusCode = 301;
-		response.setHeader('Location', '/about');
-		response.end();
-		break;
-	default:
-		path += '404.html';
-		response.statusCode = 404;
-		break;
-}
-
-// send html file
-fs.readFile(path, (err, data) => {
-	if(err) {
-		console.log(err);
-		response.end();
-	} else {
-
-		response.write(data);
-		response.end();
-		// OR
-		// response.end(data);
-		// does the same thing.
-		
-	}
-})
-
-
-});
-
-
-server.listen(3000, 'localhost', () => {
-	console.log('listening');
-});
-
-
-noder server
-
-IF you make a change to the server file, you will need to cancel out off and restart the server
-
-views folder
-
-index.html file
-
-...
-
-
-Status Codes
-
-200 - OK
-301 - Resource moved
-404 - Not found
-500 - Internal server error
-
-
-Redirects
-
--->
+- **200** - OK
+- **301** - Resource moved
+- **404** - Not found
+- **500** - Internal server error
 
 ## [Node.js Crash Course Tutorial #5 - NPM](https://www.youtube.com/watch?v=bdHE2wHT-gQ&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=5)
 
-<!--
-
-node core
-
-other node packages can be downloaded by npm
+Node.js is the core, but other node packages can be downloaded by the npm (node package manager)
 
 npm is installed with node
 
-lodash
+**nodemon** is a Live, refreshable server; node package
 
-nodemon - Live, refreshable server
+`npm install -g nodemon` allows you to install it globally.
 
-npm install -g nodemon 
+To use it locally run the command `npm init` to create a package.json file.
 
--g global
+The run `npm i --save lodash` (for old versions of node/npm) or `npm i lodash` (for newer versions of node/npm)
 
-nodemon server
-
-package.json
-
-local packages
-
-npm init
-
-npm i --save lodash // old versions of node/npm
-
-npm i lodash
-
-npm install lodash
-
-will see under dependencies
-
-const _ = require('lodash');
-
-const num = _.random(0, 20);
-console.log(num);
-
-dependencies
-
-const greet = _.once(() => {
-	console.log('hello');
-});
-
-
-DONT upload node_modules - because its HUGE!!
-
-npm install
-npm i
-
--->
+You will see lodash under dependencies in the package.json
 
 ## [Node.js Crash Course Tutorial #6 - Express Apps](https://www.youtube.com/watch?v=Lr9WUkeYSA8&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=6)
 
