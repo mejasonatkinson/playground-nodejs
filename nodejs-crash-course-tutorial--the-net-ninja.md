@@ -243,247 +243,45 @@ app.use(morgan('dev'));
 
 ## [Node.js Crash Course Tutorial #9 - MongoDB](https://www.youtube.com/watch?v=bxsemcrY4gQ&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=9)
 
-<!--
+**Databases**
 
-Database
+There are 2 types of databases: SQL -OR- NoSQL.
 
-SQL
+**SQL** uses; tables, rows and columns to store data.
 
-tables, rows, columns
+**NoSQL** uses; collections and documents to store data.
 
-NoSQL
+**mongoDB** is a **NoSQL** database.
 
-collections, documents
+Collections are similar to tables.
+documents are similar to records. 
+Stored in a JSON like syntax.
 
-mongoDB is a NoSQL database
+[MongoDB Atlas](https://www.mongodb.com/atlas/database)
 
-collections are sort off like tables.
-documents are sort off like records. stored similar to JSON..
+MongoDB can be either Local -OR- cloud based.
 
-
-MongoDB Atlas
-
-Local or cloud based
-
-build cluster
-
-collections
-
-add my own data
-
-database access
-
-add new database user
-
-
-connect to application,
-
-
-app.js
-
-const dbURI = '';
-
-Mongoose
-
-ODM library - Object Document Mapping library
-
-Schema & Models
-
-defines the structure of a type of data / document
-
-npm install mongoose
-
-const mongoose - require('mongoose');
-
-mongoos.connect(dbURI, {userNewUrlParser: true, userUnifiedTopology: true }).then((result,) => {
-console.log('');
-}).catch((err) => {
-console.log('');
-})
-
-models/blog.js
-
-const mongoose - require('mongoose');
-const Schema = mongoos.Schema;
-
-const blogSchema = new Schema({
-title: {
-type: String
-required: true
-},
-snippet: {
-type: String
-required: true
-},
-body: {
-type: String
-required: true
-}, {timestamps: true});
-
-const Blog = mongoose.model('Blog', blogSchema);
-
-module.exports = Blog;
-
-
-getting and saving data
-
-app.js
-
-const Blog = require('./models/blog');
-
-app.get('/add-blog', (req, res) => {
-const blog = new Blog({
-title: '',
-snippet: '',
-body: ''
-})
-
-blog.save().then((result) => {
-res.send(result) // displayed on page
-}).catch((err) => {
-console.log(err);
-})
-})
-
-app.get('/all-blogs', (req, res) => {
-	Blog.find().then((result) => {
-	res.send(result) // displayed on page
-}).catch((err) => {
-console.log(err);
-})
-})
-
-	Blog.findById()
-
-	Blog.find().sort()
-
-outputting
-
-app.get('/blogs', (req, res) => {
-
-Blog.find().then((result) => {
-
-
-res.render('index', { title: 'All Blogs', blogs: result})
-
-
-}).catch((err) => {
-console.log(err);
-})
-
-})
-
--->
+`npm i mongoose`
 
 ## [Node.js Crash Course Tutorial #10 - Get, Post & Delete Requests](https://www.youtube.com/watch?v=VVGgacjzc2Y&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=10)
 
-<!--
+**Request Types**
 
-Request Types
+**GET requests**
 
-GET requests to get a resource
+Used to GET a resource (data).
 
-route parameters
+**POST requests**
 
-localhost:3000/blogs/:id
+Used to POST (Create) a resource (data).
 
-something which could change.
+**DELETE requests** 
 
+Used to DELETE a resource (data).
 
+**PUT requests**
 
-app.get('/blog/:id', (req, res) => {
-
-const id = req.params.id;
-console.log(id);
-Blog.findById(id)
-.then((result) => {
-
-res.render('details', {blog: result, title: 'blog details' });
-
-}).catch((err) => {
-console.log(err);
-})
-
-
-
-})
-
-
-
-
-
-
-POST requests to create new data
-
-<form action="/blogs" method="POST">
-<input type="text" name="title"> // needs name
-
-app.js
-
-app.use(express.urlencoded({ extended: true }));
-
-
-ap.post('./blogs', (req, res) => {
-
-console.log(req.body);
-const blog = new Blog(req.body);
-
-blog.save().then((result) => {
-res.redirect('/blogs');
-}).catch((err) => {
-console.log(err);
-})
-
-})
-
-DELETE requests to delete data
-
-<a class="delete" data-doc="<%= blog._id %>">delete</a>
-
-<script>
-
-
-const trashcan = document.querySelect('a.delete');
-trashcan.addEventListern('click', (e) => {
-const endpoint = `/blogs/${trashcan.dataset.doc}`;
-
-fetch(endpoit, {
-method: 'DELETE'
-}).then((response) => {
-
-}).catch((err) => {
-
-console.log(err);
-})
-
-})
-
-
-</script>
-
-app.js
-
-app.delete('/blogs/:id', (req, res) => {
-
-const id = req.params.id;
-
-
-
-Blog.findByIdAnd Delete(Id).then((result) => {
-res.json({ redirect: '/blogs' })
-}).catch((err) => {
-console.log(err);
-})
-
-})
-
-
-PUT requests to update data
-
-
-LOST???
-
--->
+Used to PUT (Update) a resource (data).
 
 ## [Node.js Crash Course Tutorial #11 - Express Router & MVC]( https://www.youtube.com/watch?v=zW_tZR0Ir3Q&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=11)
 
