@@ -232,21 +232,14 @@ app.use((request, response, next) => {
 
 **Example of 3rd-party Middleware**
 
-https://www.npmjs.com/package/morgan
+https://www.npmjs.com/package/helmet -OR- https://www.npmjs.com/package/morgan
 
 `npm i morgan`
 
 ````
 const morgan = require('morgan');
 app.use(morgan('dev'));
-```
-
--OR-
-
-https://www.npmjs.com/package/helmet
-
-`app.use(express.static('public'));`
-
+````
 
 ## [Node.js Crash Course Tutorial #9 - MongoDB](https://www.youtube.com/watch?v=bxsemcrY4gQ&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=9)
 
