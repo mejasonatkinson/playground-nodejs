@@ -265,8 +265,6 @@ MongoDB can be either Local -OR- cloud based.
 
 ## [Node.js Crash Course Tutorial #10 - Get, Post & Delete Requests](https://www.youtube.com/watch?v=VVGgacjzc2Y&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=10)
 
-**Request Types**
-
 **GET requests**
 
 Used to GET a resource (data).
