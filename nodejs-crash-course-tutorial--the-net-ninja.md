@@ -171,36 +171,31 @@ https://www.npmjs.com/package/express
 
 `npm i ejs`
 
-```
+````
 const express = require('express');
-
 const app = express ();
-
 app.set('view engine', 'ejs');
-
 app.set('views', 'myviews');
-```
+````
 
 Youn can then pass data to views with ejs tags.
 
-```
+````
 <% const name = 'mario'; %>
-
-<p><%= name %></p> escapes specail charactors. 
-
+<p><%= name %></p>
 <p><%= title %></p>
-```
+````
 
 `=` is needed to escape specail charactors
 
 ````
 <% if(blogs.length > 0) { %>
-<% blogs.forEach(blog => {  %>
-<h3><%= blog.title %></h3>
-<p><%= blog.snippet %></p>
-<% }) %>
+	<% blogs.forEach(blog => {  %>
+		<h3><%= blog.title %></h3>
+		<p><%= blog.snippet %></p>
+	<% }) %>
 <% } esle { %>
- <p>No blogs to display</p>
+	<p>No blogs to display</p>
 <% } %>
 ````
 
@@ -215,54 +210,43 @@ Youn can then pass data to views with ejs tags.
 
 ## [Node.js Crash Course Tutorial #8 - Middleware](https://www.youtube.com/watch?v=_GJKAs7A0_4&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=8)
 
-<!--
-
 What is Middleware?
 
-code which runs on the server between getting a request and sending a response.
+Middleware is code which runs on the server between getting a request and sending a response.
 
-.use
-.get
+Examples of Middleware include; data/detail logging, authentication, parsing data and returning a 404 pages.
 
-examples
+You can Build Custom Middleware or you can use 3rd-part Middleware
 
-log details,
-authentication
-parse data
-return 404 pages
-
-custom middleware
-
+**Example of Custom Middleware**
+    
+````    
 app.use((request, response, next) => {
-	console.log("middleware #2");
+	console.log("middleware");
 	console.log(request.hostname);
 	console.log(request.path);
 	console.log(request.method);
 	next();
 });
+````
 
-app.use((request, response, next) => {
-	console.log("middleware #1");
-	next();
-});
-
-
-3rd-party Middleware
+**Example of 3rd-party Middleware**
 
 https://www.npmjs.com/package/morgan
 
-npm install morgan
+`npm i morgan`
 
+````
 const morgan = require('morgan');
-
 app.use(morgan('dev'));
+```
+
+-OR-
 
 https://www.npmjs.com/package/helmet
 
-// middleware & static files
-app.use(express.static('public')); // don't need to add public to the url of the link
+`app.use(express.static('public'));`
 
--->
 
 ## [Node.js Crash Course Tutorial #9 - MongoDB](https://www.youtube.com/watch?v=bxsemcrY4gQ&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=9)
 
