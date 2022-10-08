@@ -7,6 +7,7 @@ A place to learn more about Node JS, and try things.
 ## Notes
 
 - [Node.js Crash Course Tutorial; The Net Ninja](nodejs-crash-course-tutorial--the-net-ninja.md)
+- [Node.js Auth Tutorial (JWT); The Net Ninja](node-auth-tutorial-jwt--the-net-ninja.md)
 
 ## Resources
 
