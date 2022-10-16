@@ -32,3 +32,45 @@ database connection
 https://www.postman.com/
 
 ## [Node Auth Tutorial (JWT) #4 - User Model](https://www.youtube.com/watch?v=mnJxyc0DGM8&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=4)
+
+```
+const userSchema = new mongoose.Schema({
+ eamil: {
+  type: String,
+  required: true,
+  unqiue: true,
+  lowercase: true
+ },
+ password: {
+  type: String,
+  required: true,
+  minLength: 6
+ }
+});
+
+const User = mongoose.model('user', userSchema);
+
+module.exports = User;
+```
+
+```
+const User = require('../');
+
+module.exports.signup_post = async(req, res) => {
+ const { email, password } = req.body;
+ try {
+  const user = await User.create({email, password});
+  res.status(201).json(user);
+ }
+ catch (err) {
+  console.loh(err);
+  res.status(400).send('error');
+ }
+}
+```
+
+Test in postman
+
+NEVER STORE PLAIN PASSWORDS INSIDE OF THE DATABASE!!
+
+## [Node Auth Tutorial (JWT) #5 - Mongoose Validation](https://www.youtube.com/watch?v=nukNITdis9g&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=5)
