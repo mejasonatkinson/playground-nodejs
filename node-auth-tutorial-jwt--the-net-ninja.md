@@ -74,3 +74,40 @@ Test in postman
 NEVER STORE PLAIN PASSWORDS INSIDE OF THE DATABASE!!
 
 ## [Node Auth Tutorial (JWT) #5 - Mongoose Validation](https://www.youtube.com/watch?v=nukNITdis9g&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=5)
+
+## [Node Auth Tutorial (JWT) #6 - ](https://www.youtube.com/watch?v=teDkX-_Zkbw&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=7)
+
+## [Node Auth Tutorial (JWT) #7 - ](https://www.youtube.com/watch?v=DmrjFKTLOYo&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=8)
+
+## [Node Auth Tutorial (JWT) #8 - ](https://www.youtube.com/watch?v=8RiDRdHPcxA&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=9)
+
+## [Node Auth Tutorial (JWT) #9 - ](https://www.youtube.com/watch?v=mevc_dl1i1I&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=10)
+
+## [Node Auth Tutorial (JWT) #10 - ](https://www.youtube.com/watch?v=LZq0G8WUaII&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=11)
+
+## [Node Auth Tutorial (JWT) #11 - ](https://www.youtube.com/watch?v=S-ZIfNuT5H8&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=12)
+
+## [Node Auth Tutorial (JWT) #12 - ](https://www.youtube.com/watch?v=eWGwQ1__73E&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=13)
+
+## [Node Auth Tutorial (JWT) #13 - ](https://www.youtube.com/watch?v=VliJT26LPFA&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=14)
+
+## [Node Auth Tutorial (JWT) #14 - ](https://www.youtube.com/watch?v=f-2jDPgh_Ng&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=15)
+
+## [Node Auth Tutorial (JWT) #15 - ](https://www.youtube.com/watch?v=9N7uqbuODqs&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=16)
+
+## [Node Auth Tutorial (JWT) #16 - ](https://www.youtube.com/watch?v=jQn74jB5dg0&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=17)
+
+## [Node Auth Tutorial (JWT) #17 - ](https://www.youtube.com/watch?v=JqF2BJBQI9Y&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=18)
+
+## [Node Auth Tutorial (JWT) #18 - ](https://www.youtube.com/watch?v=mqubRYtnPcs&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=19)
+
+
+
+
+
+
+
+
+
+
+
