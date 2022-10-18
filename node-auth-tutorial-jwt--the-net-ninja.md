@@ -75,7 +75,72 @@ NEVER STORE PLAIN PASSWORDS INSIDE OF THE DATABASE!!
 
 ## [Node Auth Tutorial (JWT) #5 - Mongoose Validation](https://www.youtube.com/watch?v=nukNITdis9g&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=5)
 
-## [Node Auth Tutorial (JWT) #6 - ](https://www.youtube.com/watch?v=teDkX-_Zkbw&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=7)
+Custom error messages
+
+`npm install validator`
+
+```
+const { isEmail } = require('validator');
+
+const userSchema = new mongoose.Schema({
+ eamil: {
+  type: String,
+  required: [true, "Please enter an email"],
+  unqiue: true,
+  lowercase: true
+  validate: [isEmail, 'Pleae enter a valid email']
+ },
+ password: {
+  type: String,
+  required: [true, "Please enter an password"],
+  minlength: [6, "Minium password length is 6 characters"],
+ }
+});
+
+const User = mongoose.model('user', userSchema);
+
+module.exports = User;
+```
+
+```
+// hadle errors
+const handleErrors = (err) => {
+ console.log(err.message, err.code);
+ let errors = {email: '', password: ''};
+ 
+ // duplicate error code
+ 
+ if (err.code == 11000) {
+  errors.email = 'that email is already registered';
+  return errors;
+ }
+ 
+ // validation errors
+ if(err.message.includes('user validation failed')){
+  console.log(err);
+  console.log(Object.values(err.errors));
+  Object.values(err.errors).forEach(error => {
+   console.log(error.properties);
+  });
+  Object.values(err.errors).forEach(({properties}) => {
+   console.log(properties);
+   errors[properties.path] = properties.message;
+  })
+ }
+ return errors;
+}
+
+catch (err) {
+ const errors = handleErrors(err);
+ res.status(400).json( errors );
+}
+
+```
+
+## [Node Auth Tutorial (JWT) #6 - Mongoose Hooks](https://www.youtube.com/watch?v=teDkX-_Zkbw&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=7)
+
+
+
 
 ## [Node Auth Tutorial (JWT) #7 - ](https://www.youtube.com/watch?v=DmrjFKTLOYo&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=8)
 
