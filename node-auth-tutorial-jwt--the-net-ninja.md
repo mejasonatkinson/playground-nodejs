@@ -139,10 +139,33 @@ catch (err) {
 
 ## [Node Auth Tutorial (JWT) #6 - Mongoose Hooks](https://www.youtube.com/watch?v=teDkX-_Zkbw&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=7)
 
+Hash a users password, so that the users password can not be exposed if the database is hacked.
+
+```
+// fire a function after doc saved to db
+
+userSchema.post('save', function (doc, next) {
+ console.log('new user created and saved', doc);
+ next();
+})
+```
+
+```
+// fire a function before doc saved to db
+
+userSchema.pre('save', function (next) {
+ console.log('user about to be created & saved', this);
+ next();
+})
+```
+
+https://mongoosejs.com/docs/middleware.html
+
+
+## [Node Auth Tutorial (JWT) #7 - Hashing Passwords](https://www.youtube.com/watch?v=DmrjFKTLOYo&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=8)
 
 
 
-## [Node Auth Tutorial (JWT) #7 - ](https://www.youtube.com/watch?v=DmrjFKTLOYo&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=8)
 
 ## [Node Auth Tutorial (JWT) #8 - ](https://www.youtube.com/watch?v=8RiDRdHPcxA&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=9)
 
