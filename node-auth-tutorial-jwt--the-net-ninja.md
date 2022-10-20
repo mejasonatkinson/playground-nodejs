@@ -164,10 +164,26 @@ https://mongoosejs.com/docs/middleware.html
 
 ## [Node Auth Tutorial (JWT) #7 - Hashing Passwords](https://www.youtube.com/watch?v=DmrjFKTLOYo&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=8)
 
+```
+ npm install bcrypt
+```
 
+password1234 -> Hashing Algorithm -> A697y8yujkjfh
 
+salt + password1234 -> Hashing Algorithm -> A697y8yujkjfh
 
-## [Node Auth Tutorial (JWT) #8 - ](https://www.youtube.com/watch?v=8RiDRdHPcxA&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=9)
+```
+const bcrypt = require('bcrypt')
+
+// fire a function before doc saved to db
+userSchema.pre('save', async function (next) {
+ const salt = await bcrypt.genSalt();
+ this.password = await bcrypt.hash(this.password, salt);
+ next();
+})
+```
+
+## [Node Auth Tutorial (JWT) #8 - Auth Views](https://www.youtube.com/watch?v=8RiDRdHPcxA&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=9)
 
 ## [Node Auth Tutorial (JWT) #9 - ](https://www.youtube.com/watch?v=mevc_dl1i1I&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=10)
 
