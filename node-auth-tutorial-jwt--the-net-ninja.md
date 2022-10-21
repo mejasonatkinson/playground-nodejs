@@ -185,7 +185,82 @@ userSchema.pre('save', async function (next) {
 
 ## [Node Auth Tutorial (JWT) #8 - Auth Views](https://www.youtube.com/watch?v=8RiDRdHPcxA&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=9)
 
-## [Node Auth Tutorial (JWT) #9 - ](https://www.youtube.com/watch?v=mevc_dl1i1I&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=10)
+Frontend instead of postman
+
+signup.ejs
+
+```
+<%- include('partials/header'); -%>
+
+<form>
+ <h2>Sign up</h1>
+ 
+ <label for="email">Email</label>
+ <input type="text" name="email" required />
+ <div class="email error"></div>
+ 
+  <label for="password">Password</label>
+ <input type="password" name="password" required />
+ <div class="password error"></div>
+ 
+ <button>Sigm up</button>
+ 
+</form>
+
+<script>
+ const form = document.querySelector('form');
+ form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const email = form.email.value;
+  const password = form.password.value;
+  
+  console.log(email, password);
+ })
+</script>
+
+<%- include('partials/footer'); -%>
+```
+
+login.ejs
+
+```
+<%- include('partials/header'); -%>
+
+<form>
+ <h2>Log in</h1>
+ 
+ <label for="email">Email</label>
+ <input type="text" name="email" required />
+ <div class="email error"></div>
+ 
+  <label for="password">Password</label>
+ <input type="password" name="password" required />
+ <div class="password error"></div>
+ 
+ <button>Sigm up</button>
+ 
+</form>
+
+<script>
+ const form = document.querySelector('form');
+ form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const email = form.email.value;
+  const password = form.password.value;
+  
+  console.log(email, password);
+ })
+</script>
+
+<%- include('partials/footer'); -%>
+```
+
+## [Node Auth Tutorial (JWT) #9 - Cookies Primer](https://www.youtube.com/watch?v=mevc_dl1i1I&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=10)
+
+
+
+
+
 
 ## [Node Auth Tutorial (JWT) #10 - ](https://www.youtube.com/watch?v=LZq0G8WUaII&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=11)
 
