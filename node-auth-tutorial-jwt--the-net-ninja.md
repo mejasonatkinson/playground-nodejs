@@ -579,7 +579,16 @@ const handleErrors = (err) => {
  console.log(err.message, err.code);
  let errors = {email: '', password: ''};
  
- // incorect email
+ // incorrect email
+ if (err.message === 'incorrect email') {
+  errors.email = 'that email is not registered';
+ }
+ 
+
+ // incorrect password
+ if (err.message === 'incorrect password') {
+  errors.email = 'that password incorrect';
+ }
  
  
  // duplicate error code
@@ -606,9 +615,11 @@ const handleErrors = (err) => {
 
 ```
 
-
-
 ## [Node Auth Tutorial (JWT) #15 - Protecting Routes](https://www.youtube.com/watch?v=9N7uqbuODqs&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=16)
+
+
+
+
 
 ## [Node Auth Tutorial (JWT) #16 - Logging Users Out](https://www.youtube.com/watch?v=jQn74jB5dg0&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=17)
 
