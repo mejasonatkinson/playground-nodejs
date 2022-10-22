@@ -553,7 +553,6 @@ userSchema.statics.login = async function(email, password) {
 authController.js
 
 ```
-
 module.exports.login_post = async (req, res) => {
  const { email, password } = req.body;
  
@@ -562,15 +561,19 @@ module.exports.login_post = async (req, res) => {
   res.status(200).json({ user: user._id });
  }
  catch (err) {
+  const errors = handleErrors(err);
   res.status(400).json({})
  }
 }
-
 ```
 
 ## [Node Auth Tutorial (JWT) #14 - Logging Users in (part 2)](https://www.youtube.com/watch?v=f-2jDPgh_Ng&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=15)
 
+authController.js
 
+```
+// incorect email
+```
 
 
 
