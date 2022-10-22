@@ -677,6 +677,44 @@ module.exports.logout_get = (req, res) => {
 
 ## [Node Auth Tutorial (JWT) #17 - Checking the Current User](https://www.youtube.com/watch?v=JqF2BJBQI9Y&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=18)
 
+middleware/authMiddleware.js
+
+```
+// check current user
+const  checkUser = (req, res, next) => {
+ const token = req.cookies.jwt;
+
+ if (token) {
+ jst.verify(token, 'net ninja secret', async (err, decodedToken) => {
+ if (err){
+  console.log(err.message);
+  next();
+ } else {
+  let user await user.findById(decodedToken.id);
+  res.locals.user = user;
+  next();
+ }
+ });
+ } else {
+  res.locals.user = null;
+  next();
+ }
+}
+module.exports = { requireAuth, checkUser};
+```
+
+app.js
+
+```
+const { requireAuth, checkUser } = require('./middleware/authMiddleware');
+// routes
+app.get('*', checkUser);
+```
+
+
+
+
+
 ## [Node Auth Tutorial (JWT) #18 - Confitional Rendering](https://www.youtube.com/watch?v=mqubRYtnPcs&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=19)
 
 
