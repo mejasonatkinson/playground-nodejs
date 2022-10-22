@@ -330,24 +330,53 @@ app.get('/read-cookies', (req, res) => {
 
 Should always use https, for production.
 
-
 ## [Node Auth Tutorial (JWT) #10 - JSON Web Tokens (theory)](https://www.youtube.com/watch?v=LZq0G8WUaII&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=11)
 
-## [Node Auth Tutorial (JWT) #11 - ](https://www.youtube.com/watch?v=S-ZIfNuT5H8&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=12)
+Log in form (browser) > email + password > server
 
-## [Node Auth Tutorial (JWT) #12 - ](https://www.youtube.com/watch?v=eWGwQ1__73E&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=13)
+IF correct (checked creds in database)
 
-## [Node Auth Tutorial (JWT) #13 - ](https://www.youtube.com/watch?v=VliJT26LPFA&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=14)
+server > JSON Web Token (JWT) cookie > browser
 
-## [Node Auth Tutorial (JWT) #14 - ](https://www.youtube.com/watch?v=f-2jDPgh_Ng&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=15)
+The token can then be sent back to the server on each request
 
-## [Node Auth Tutorial (JWT) #15 - ](https://www.youtube.com/watch?v=9N7uqbuODqs&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=16)
+browser > JSON Web Token (JWT) cookie > server
 
-## [Node Auth Tutorial (JWT) #16 - ](https://www.youtube.com/watch?v=jQn74jB5dg0&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=17)
+[Research CSRF](https://owasp.org/www-community/attacks/csrf)
 
-## [Node Auth Tutorial (JWT) #17 - ](https://www.youtube.com/watch?v=JqF2BJBQI9Y&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=18)
+https://jwt.io/
 
-## [Node Auth Tutorial (JWT) #18 - ](https://www.youtube.com/watch?v=mqubRYtnPcs&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=19)
+JWT Signing
+
+Headers
+For additional infomation (meta)
+
+Payload
+For identity 
+
+Signature
+For security 
+
+Secret
+A secret secure string
+
+They are all hashed together to create the JWT Signing
+
+## [Node Auth Tutorial (JWT) #11 - New User Signup (part 1)](https://www.youtube.com/watch?v=S-ZIfNuT5H8&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=12)
+
+## [Node Auth Tutorial (JWT) #12 - New User Signup (part 2)](https://www.youtube.com/watch?v=eWGwQ1__73E&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=13)
+
+## [Node Auth Tutorial (JWT) #13 - Logging Users in (part 1)](https://www.youtube.com/watch?v=VliJT26LPFA&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=14)
+
+## [Node Auth Tutorial (JWT) #14 - Logging Users in (part 2)](https://www.youtube.com/watch?v=f-2jDPgh_Ng&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=15)
+
+## [Node Auth Tutorial (JWT) #15 - Protecting Routes](https://www.youtube.com/watch?v=9N7uqbuODqs&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=16)
+
+## [Node Auth Tutorial (JWT) #16 - Logging Users Out](https://www.youtube.com/watch?v=jQn74jB5dg0&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=17)
+
+## [Node Auth Tutorial (JWT) #17 - Checking the Current User](https://www.youtube.com/watch?v=JqF2BJBQI9Y&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=18)
+
+## [Node Auth Tutorial (JWT) #18 - Confitional Rendering](https://www.youtube.com/watch?v=mqubRYtnPcs&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=19)
 
 
 
