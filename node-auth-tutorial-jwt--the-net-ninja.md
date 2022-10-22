@@ -257,12 +257,81 @@ login.ejs
 
 ## [Node Auth Tutorial (JWT) #9 - Cookies Primer](https://www.youtube.com/watch?v=mevc_dl1i1I&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=10)
 
+Cookies
+
+Store data in a user's browser
+name=shaun, age=30,
+
+Create a cookie, on a server response.
+Every request sends a cookie to the server. 
+Which holds a JWT, to authenticate the user.
+
+There are possible sercuirty issues with this and other methods.
+
+cross site, request forgery
+
+state changing end points...
+
+[Research CSRF](https://owasp.org/www-community/attacks/csrf)
+
+app.js
+
+```
+// cookies
+app.get('/set-cookies', (req, res) => {
+ res.setHeader('Set-Cookie', 'nameUser=true');
+ res.send('you got the cookies!');
+});
+```
+
+got to localhost:3000/set-cookies
+inspect > Applications > Cookies > You should see it there.
+
+`document.cookie`
+
+alternative:
+
+npm install cookie-parser
+
+```
+const cookieParser = require('cookie-paser');
+
+// middleware
+app.use(cookieParser());
+
+// cookies
+app.get('/set-cookies', (req, res) => {
+ // res.setHeader('Set-Cookie', 'nameUser=true');
+ 
+ res.cookie('newUser', false);
+ 
+ res.cookie('isEmployee', true, { maxAge: 1000 * 60 * 60 * 24, httpOnly: true }); 
+ // 1 day in mil seconds
+ 
+ // res.cookie('isEmployee', true, { maxAge: 1000 * 60 * 60 * 24, secure:true }); 
+ // only send when you have a secure connection (https)
+ 
+ // res.cookie('isEmployee', true, { maxAge: 1000 * 60 * 60 * 24, httpOnly:true }); 
+ // cookie can only be accessed by http and not in the console by using document.cookie
+ 
+ res.send('you got the cookies!');
+});
+
+app.get('/read-cookies', (req, res) => {
+
+ const cookies = req.cookies;
+ console.log(cookies);
+ console.log(cookies.newUser);
+ res.json(cookies);
+
+});
+
+```
+
+Should always use https, for production.
 
 
-
-
-
-## [Node Auth Tutorial (JWT) #10 - ](https://www.youtube.com/watch?v=LZq0G8WUaII&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=11)
+## [Node Auth Tutorial (JWT) #10 - JSON Web Tokens (theory)](https://www.youtube.com/watch?v=LZq0G8WUaII&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=11)
 
 ## [Node Auth Tutorial (JWT) #11 - ](https://www.youtube.com/watch?v=S-ZIfNuT5H8&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=12)
 
