@@ -527,7 +527,52 @@ signup.ejs
 
 ## [Node Auth Tutorial (JWT) #13 - Logging Users in (part 1)](https://www.youtube.com/watch?v=VliJT26LPFA&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=14)
 
+Mostly copied from New User Signup (part 1)
+
+signup.ejs > copy, script > login.ejs
+
+change fetch to /login
+
+User.js
+
+```
+// static method to login user
+userSchema.statics.login = async function(email, password) {
+ const user = await this.findOne({email: email});
+ if (user) {
+  const auth = await bcrypt.compare(password, user.password);
+  if (auth) {
+   return user
+  }
+   throw Error('incorect password')
+ }
+ throw Error('incorect email')
+}
+```
+
+authController.js
+
+```
+
+module.exports.login_post = async (req, res) => {
+ const { email, password } = req.body;
+ 
+ try {
+  const user = await user.login(email, password);
+  res.status(200).json({ user: user._id });
+ }
+ catch (err) {
+  res.status(400).json({})
+ }
+}
+
+```
+
 ## [Node Auth Tutorial (JWT) #14 - Logging Users in (part 2)](https://www.youtube.com/watch?v=f-2jDPgh_Ng&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=15)
+
+
+
+
 
 ## [Node Auth Tutorial (JWT) #15 - Protecting Routes](https://www.youtube.com/watch?v=9N7uqbuODqs&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=16)
 
