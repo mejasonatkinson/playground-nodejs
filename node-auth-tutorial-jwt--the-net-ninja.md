@@ -453,13 +453,77 @@ module.exports.signup_post = async(req, res) => {
   res.status(201).json({ user: user._id });
  }
  catch (err) {
-  console.loh(err);
+  console.log(err);
   res.status(400).send('error');
  }
 }
 ```
 
 ## [Node Auth Tutorial (JWT) #12 - New User Signup (part 2)](https://www.youtube.com/watch?v=eWGwQ1__73E&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=13)
+
+
+signup.ejs
+
+```
+<%- include('partials/header'); -%>
+
+<form>
+ <h2>Sign up</h1>
+ 
+ <label for="email">Email</label>
+ <input type="text" name="email" required />
+ <div class="email error"></div>
+ 
+  <label for="password">Password</label>
+ <input type="password" name="password" required />
+ <div class="password error"></div>
+ 
+ <button>Sigm up</button>
+ 
+</form>
+
+<script>
+ const form = document.querySelector('form');
+ form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const email = form.email.value;
+  const password = form.password.value;
+  
+  // console.log(email, password);
+  
+  const emailError = document.querySelector('.email.error');
+  const passwordError = document.querySelector('.password.error');
+  
+  emailError.textContent = '';
+  passwordError.textContent = '';
+  
+  try {
+   const res = await fetch('/signup', {
+    method: 'POST', 
+    body: JSON.stringify({ email: email, password: password}), 
+    // can be shortened to {email, password}
+    headers: {'Content-Type': 'application/json'}
+   });
+   
+   const data = await res.json();
+   console.log(data);
+   if (data.errors) {
+    emailError.textContent = data.errors.email;
+    passwordError.textContent = data.errors.password;
+   }
+   if (data.user) {
+    location.assign('/');
+   }
+  } 
+  catch (err) {
+   console.loh(err);
+  }
+  
+ })
+</script>
+
+<%- include('partials/footer'); -%>
+```
 
 ## [Node Auth Tutorial (JWT) #13 - Logging Users in (part 1)](https://www.youtube.com/watch?v=VliJT26LPFA&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=14)
 
