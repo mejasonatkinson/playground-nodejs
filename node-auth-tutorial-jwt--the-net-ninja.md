@@ -617,9 +617,40 @@ const handleErrors = (err) => {
 
 ## [Node Auth Tutorial (JWT) #15 - Protecting Routes](https://www.youtube.com/watch?v=9N7uqbuODqs&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=16)
 
+If JWT is present AND valid show screen..
 
+middleware/authMiddleware.js
 
+```
+const jwt = require('jsonwebtoken');
+const requireAuth = (req, res, next) => {
+ const token = req.cookies.jwt;
+ // check json web token exists & is verified
+ if (token) {
+ jst.verify(token, 'net ninja secret', (err, decodedToken) => {
+ if (err){
+ console.log(err.message);
+  res.redirect('/login');
+ } else {
+  console.log(decodedToken);
+  next();
+ }
+ });
+ } else {
+ res.redirect('/login');
+ }
+}
+module.exports = { requireAuth };
+```
 
+app.js
+
+```
+const { requireAuth } = require('.middleware/authMiddleware');
+
+// routes
+app.get('/smoothies', requireAuth, (req, res) => res.render('smoothies'));
+```
 
 ## [Node Auth Tutorial (JWT) #16 - Logging Users Out](https://www.youtube.com/watch?v=jQn74jB5dg0&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=17)
 
