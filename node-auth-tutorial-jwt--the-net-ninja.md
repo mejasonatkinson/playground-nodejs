@@ -364,6 +364,101 @@ They are all hashed together to create the JWT Signing
 
 ## [Node Auth Tutorial (JWT) #11 - New User Signup (part 1)](https://www.youtube.com/watch?v=S-ZIfNuT5H8&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=12)
 
+1. hash pw and store in db [x]
+2. instantly log the user in [ ]
+3. create a jwt for them [ ]
+
+app.js
+
+```
+const cookieParser = require('cookie-paser');
+
+// middleware
+app.use(cookieParser());
+```
+
+signup.ejs
+
+```
+<%- include('partials/header'); -%>
+
+<form>
+ <h2>Sign up</h1>
+ 
+ <label for="email">Email</label>
+ <input type="text" name="email" required />
+ <div class="email error"></div>
+ 
+  <label for="password">Password</label>
+ <input type="password" name="password" required />
+ <div class="password error"></div>
+ 
+ <button>Sigm up</button>
+ 
+</form>
+
+<script>
+ const form = document.querySelector('form');
+ form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const email = form.email.value;
+  const password = form.password.value;
+  
+  // console.log(email, password);
+  
+  
+  try {
+   const res = await fetch('/signup', {
+    method: 'POST', 
+    body: JSON.stringify({ email: email, password: password}), 
+    // can be shortened to {email, password}
+    headers: {'Content-Type': 'application/json'}
+   });
+  } 
+  catch (err) {
+   console.loh(err);
+  }
+  
+ })
+</script>
+
+<%- include('partials/footer'); -%>
+```
+
+```
+npm install jsonwebtoken
+```
+
+authControllers.js
+
+```
+const jwt = require('jsonwebtoken');
+const maxAge = 3 * 24 * 60 * 60; // time in seconds // 3 days
+const createToken = (id) => {
+ return jwt.sign({ id }, 'net ninja secret', {
+  expiresIn: maxAge 
+ });
+}
+
+
+module.exports.signup_post = async(req, res) => {
+ const { email, password } = req.body;
+ try {
+  const user = await User.create({email, password});
+  
+  const token = createToken(user._id);
+  
+  res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+  
+  res.status(201).json({ user: user._id });
+ }
+ catch (err) {
+  console.loh(err);
+  res.status(400).send('error');
+ }
+}
+```
+
 ## [Node Auth Tutorial (JWT) #12 - New User Signup (part 2)](https://www.youtube.com/watch?v=eWGwQ1__73E&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=13)
 
 ## [Node Auth Tutorial (JWT) #13 - Logging Users in (part 1)](https://www.youtube.com/watch?v=VliJT26LPFA&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=14)
