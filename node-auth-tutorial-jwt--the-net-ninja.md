@@ -654,6 +654,27 @@ app.get('/smoothies', requireAuth, (req, res) => res.render('smoothies'));
 
 ## [Node Auth Tutorial (JWT) #16 - Logging Users Out](https://www.youtube.com/watch?v=jQn74jB5dg0&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=17)
 
+
+header.ejs
+```
+<li><a href="/logout">Log Out</a></li>
+```
+
+authRoutes.js
+```
+router.get('/logout', authController.logout_get);
+```
+
+authControls.js
+```
+module.exports.logout_get = (req, res) => {
+ res.cookie('jwt', '', { maxAge: 1 }); 
+ // removing the token value
+ // expires after 1 second
+ res.redirect('/');
+}
+```
+
 ## [Node Auth Tutorial (JWT) #17 - Checking the Current User](https://www.youtube.com/watch?v=JqF2BJBQI9Y&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=18)
 
 ## [Node Auth Tutorial (JWT) #18 - Confitional Rendering](https://www.youtube.com/watch?v=mqubRYtnPcs&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=19)
