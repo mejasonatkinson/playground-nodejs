@@ -712,12 +712,21 @@ app.get('*', checkUser);
 ```
 
 
-
-
-
 ## [Node Auth Tutorial (JWT) #18 - Confitional Rendering](https://www.youtube.com/watch?v=mqubRYtnPcs&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=19)
 
+header.ejs
 
+```
+<ul>
+<% if (user) { %>
+ <li>Welcome <%= user.email %></li>
+ <li><a href="">Log out</a></li>
+<% } else { %> 
+ <li><a href="">Log in</a></li>
+ <li><a href="">Sign up</a></li>
+<% } %> 
+</ul>
+```
 
 
 
