@@ -51,3 +51,30 @@ What will we learn
 - Create an API using Node.js, Express & MongoDB
 - Test our API using Postman
 - Create a simple front-end to interact with our API
+
+https://github.com/iamshaunjp/rest-api-playlist
+
+## [REST API Tutorial (Node, Express & Mongo) #2 -Setting up Node.js](https://www.youtube.com/watch?v=A5fiWcVcADw&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=2)
+
+Installing
+
+Node
+Mongo
+
+Mongo DB not working? As expected.. I think things have changed... since the tutorial was made?
+
+Create package.json file
+
+npm init -y 
+npm install
+
+
+
+
+
+
+
+
+
+
+
