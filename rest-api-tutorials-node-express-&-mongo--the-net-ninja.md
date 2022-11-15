@@ -68,11 +68,24 @@ Create package.json file
 npm init -y 
 npm install
 
+## [REST API Tutorial (Node, Express & Mongo) #3 - HTTP Methods](https://www.youtube.com/watch?v=Fizxr21bjWU&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=3)
 
+HTTP Methods
+A way of telling the server what type of request is being made.
+GET (read)
+POST (create)
+PUT (update)
+DELETE
 
+(CRUD)
 
+API Routes
 
+url/api/name (list)
 
+url/api/name/id (list item)
+
+## [REST API Tutorial (Node, Express & Mongo) #4 - Creating an Express App](https://www.youtube.com/watch?v=7uXKyRFTlWA&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=4)
 
 
 
