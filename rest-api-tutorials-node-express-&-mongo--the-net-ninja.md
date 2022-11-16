@@ -87,7 +87,21 @@ url/api/name/id (list item)
 
 ## [REST API Tutorial (Node, Express & Mongo) #4 - Creating an Express App](https://www.youtube.com/watch?v=7uXKyRFTlWA&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=4)
 
+Don't need express to create a API.
 
+npm install express --save
 
+index.js
 
+const express = require('express');
+
+const app = express();
+
+app.listen(process.en.port || 4000, function(){
+	console.log('now listening for requests');
+});
+
+node index
+
+## [REST API Tutorial (Node, Express & Mongo) #5 - Handling Requests](https://www.youtube.com/watch?v=Bc2QE-kHbu0&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=5)
 
