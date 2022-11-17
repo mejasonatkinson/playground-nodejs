@@ -105,3 +105,16 @@ node index
 
 ## [REST API Tutorial (Node, Express & Mongo) #5 - Handling Requests](https://www.youtube.com/watch?v=Bc2QE-kHbu0&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=5)
 
+app.get("/", function(req, res){
+	console.log('GET request);
+	res.send({ name: 'Yoshi' });
+});
+
+node index
+
+localhost:4000
+
+## [REST API Tutorial (Node, Express & Mongo) #6 - Creating Routes](https://www.youtube.com/watch?v=BNikS1X5NVk&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=6)
+
+
+
