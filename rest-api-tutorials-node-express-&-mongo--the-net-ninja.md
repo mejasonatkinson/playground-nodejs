@@ -116,5 +116,57 @@ localhost:4000
 
 ## [REST API Tutorial (Node, Express & Mongo) #6 - Creating Routes](https://www.youtube.com/watch?v=BNikS1X5NVk&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=6)
 
+node index
+
+npm install nodemon --save-dev
+
+nodemon index
+
+routes/api.js
+
+const express = require('express');
+const router = express.Router();
+
+// get a list of ninjas from the db
+router.get('/ninjas', function(req, res){
+	res.send({type:'GET'});
+});
+
+// add a new ninja to the db
+router.post('/ninjas', function(req, res){
+	res.send({type:'POST'});
+});
+
+// update a ninja in the db
+router.put('/ninjas/:id', function(req, res){
+	res.send({type:'PUT'});
+});
+
+// delete a ninja in the db
+router.delete('/ninjas/:id', function(req, res){
+	res.send({type:'DELETE'});
+});
+
+
+module.exports = router;
+
+index.js
+
+const express = require('express');
+const routes = require('./routes/api');
+
+const app = express();
+
+// initialize routes
+app.use('/api', routes);
+
+app.listen(process.env.port || 4000, function(){
+console.log('now listening for requests');
+});
+
+localhost:4000/api/ninjas
+
+Browsers on there own can only handle get requests
+
 
 
