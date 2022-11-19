@@ -168,7 +168,7 @@ localhost:4000/api/ninjas
 
 Browsers on there own can only handle get requests
 
-[REST API Tutorial (Node, Express & Mongo) #6.5 - Postman](https://www.youtube.com/watch?v=3Nvx0mNXPc4&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=7)
+## [REST API Tutorial (Node, Express & Mongo) #6.5 - Postman](https://www.youtube.com/watch?v=3Nvx0mNXPc4&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=7)
 
 GET
 
