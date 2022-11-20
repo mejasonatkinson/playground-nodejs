@@ -188,3 +188,51 @@ localhost:4000/api/ninjas/yoshi
 
 
 make sure node or nodemon is running.
+
+## [REST API Tutorial (Node, Express & Mongo) #7 - Handling POST Requests (& middleware)](https://www.youtube.com/watch?v=bWiW7tLtlJM&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=8)
+
+POST request
+
+POST
+
+localhost:4000/api/ninjas
+
+Body
+
+raw
+
+JSON (application/json)
+
+{
+"name": "ryu",
+"rank": "black belt"
+}
+
+
+Middleware
+
+fired between request and response
+
+app.use(middleware);
+
+npm install body-parser --save
+
+index.js
+
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
+
+routes/api.js
+
+// add a new ninja to the db
+router.post('/ninjas', function(req, res){
+	console.log(req.body);
+	res.send({
+		type:'POST',
+		name: req.body.name,
+		rank: req.body.rank
+	});
+});
+
+nodemon index
