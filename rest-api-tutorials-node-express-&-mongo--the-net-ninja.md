@@ -236,3 +236,52 @@ router.post('/ninjas', function(req, res){
 });
 
 nodemon index
+
+
+## [REST API Tutorial (Node, Express & Mongo) #8 - Models & Schemas](https://www.youtube.com/watch?v=aoB0IkQ_1jE&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=9)
+
+
+Models, 
+are collections within MongoDB
+
+Users
+Ninjas
+
+Schemas
+is the structure of the data in the collections
+
+Mongoose
+
+adds a layer of methods to easily save, edit, retreive and delete data from mongodb
+
+npm install mongoose --save
+
+models/ninjas.js
+
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+// create ninja Schema & model
+const NinjaSchema = new Schema({
+	name: {
+	type: String,
+	required: [true, 'Name field is required'],
+	},
+	rank: {
+	type: String,
+	}
+	available: {
+	type: Boolean,
+	default: false
+	}
+	// add in geo location
+
+});
+
+const Ninja = mongoos.model('ninja', NinjaSchema);
+
+module.exports = Ninja;
+
+
+
+
