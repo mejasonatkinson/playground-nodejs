@@ -282,6 +282,99 @@ const Ninja = mongoos.model('ninja', NinjaSchema);
 
 module.exports = Ninja;
 
+## [REST API Tutorial (Node, Express & Mongo) #9 - Saving Data to MongoDB](https://www.youtube.com/watch?v=cOt8LfcA9wY&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=10)
 
+run mongoDB
+
+index.js
+
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/ninjago');
+mongoose.Promise = global.Promise;
+
+app.js
+
+const Ninja = require('../models/ninja');
+
+router.post('/ninjas', function(req, res){
+	// var ninja = new Ninja(req.body);
+	// ninja.save();
+
+	Ninja.create(re.body).then(function(ninja){
+		res.send(ninja);
+	});
+});
+
+
+Postman
+
+POST
+
+localhost:4000/api/ninjas
+
+Body
+
+raw
+
+JSON (application/json)
+
+{
+"name": "ryu",
+"rank": "black belt"
+"available:": true
+}
+
+Send
+
+Will return: "_id":
+
+Robomongo (3T is halting development work on Robo 3T and we are setting the code repository to read-only)
+
+
+
+
+Postman
+
+POST
+
+localhost:4000/api/ninjas
+
+Body
+
+raw
+
+JSON (application/json)
+
+{
+"name": "yoshi",
+"rank": "brown belt"
+}
+
+Send
+
+
+
+
+Postman
+
+POST
+
+localhost:4000/api/ninjas
+
+Body
+
+raw
+
+JSON (application/json)
+
+{
+"rank": "brown belt"
+"available:": true
+}
+
+Send
+
+Loading... Error?
 
 
