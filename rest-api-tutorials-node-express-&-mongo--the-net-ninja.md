@@ -378,3 +378,32 @@ Send
 Loading... Error?
 
 
+## [REST API Tutorial (Node, Express & Mongo) #10 - Error Handling](https://www.youtube.com/watch?v=w1V2SdzdQBs&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=11)
+
+Middleware
+
+Request
+
+Body Parser
+
+Route Handlers
+
+Response
+
+
+app.js
+
+
+router.post('/ninjas', function(req, res, next){
+	Ninja.create(re.body).then(function(ninja){
+		res.send(ninja);
+	}).catch(next);
+});
+
+
+index.js
+
+app.use(function(err, req, res, next){
+	// console.log(err);
+	res.status.(422).send({error: err.message});
+});
