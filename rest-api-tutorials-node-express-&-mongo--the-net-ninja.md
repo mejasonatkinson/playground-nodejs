@@ -407,3 +407,23 @@ app.use(function(err, req, res, next){
 	// console.log(err);
 	res.status.(422).send({error: err.message});
 });
+
+
+## [REST API Tutorial (Node, Express & Mongo) #11 - Handling DELETE Requests](https://www.youtube.com/watch?v=NEFfbK323Ok&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=12)
+
+
+api.js
+
+router.delete('/ninja/:id', function(req, res, next) {
+
+// console.log(req.params.id);
+
+Ninja.findByIdAndRemove({_id: req.params.id}).then(function(ninja){
+res.send(ninja);
+})
+
+// res.send({type: 'DELETE'});
+
+});
+
+
