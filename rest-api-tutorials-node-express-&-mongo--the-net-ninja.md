@@ -426,4 +426,21 @@ res.send(ninja);
 
 });
 
+## [REST API Tutorial (Node, Express & Mongo) #12 - PUT Requests](https://www.youtube.com/watch?v=sEkRmVfc8XE&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=13)
+
+api.js
+
+router.put('/ninja/:id', function(req, res, next) {
+
+Ninja.findByIdAndUpdate({_id: req.params.id}, req.body).then(function(){
+	Ninja.findOne({_id: req.params.id}).then(function(ninja) {
+		res.send(ninja);
+	})
+})
+
+// res.send({type: 'PUT'});
+
+});
+
+
 
