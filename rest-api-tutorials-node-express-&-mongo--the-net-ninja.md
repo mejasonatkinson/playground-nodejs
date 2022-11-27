@@ -443,4 +443,49 @@ Ninja.findByIdAndUpdate({_id: req.params.id}, req.body).then(function(){
 });
 
 
+## [REST API Tutorial (Node, Express & Mongo) #13 - GeoJSON](https://www.youtube.com/watch?v=MvY8vcrojYw&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=14)
 
+Mongo GeoJSON
+
+
+ninja.js
+
+
+  // "geometry": {
+    // "type": "Point",
+    // "coordinates": [125.6, 10.1]
+  // },
+
+
+const GeoSchema = new Schema({
+type: {
+	type: String,
+	default: "Point"
+},
+coordinates: {
+	type: [Numbers],
+	index: "2dsphere"
+}
+});
+
+
+const NinjaSchema = new Schema({
+name: {
+type: String,
+required: [true, 'Name field is required']
+},
+rank: {
+ type: String
+},
+geometry: GeoSchema
+})
+
+
+api.js
+
+router.get('/ninjas', function(req, res, next) {
+res.send({type: 'GET'});
+});
+
+
+https://geojson.org/
