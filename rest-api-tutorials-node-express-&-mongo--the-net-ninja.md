@@ -489,3 +489,51 @@ res.send({type: 'GET'});
 
 
 https://geojson.org/
+
+
+
+
+
+## [REST API Tutorial (Node, Express & Mongo) #14 - GET Requests](https://www.youtube.com/watch?v=k8mi38BI55g&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=15)
+
+Post content...
+
+
+
+
+api.js
+
+router.get('/ninjas', function(req, res, next) {
+res.send({type: 'GET'});
+});
+
+URL Params
+
+?lng50.45&lat=42.35
+
+
+
+
+
+
+api.js
+
+router.get('/ninjas', function(req, res, next) {
+
+
+Ninja.geoNear(
+	{type: 'Points', coordinates: [parseFloat(req.query.lng), parseFloat(re.query.lat)]},
+	{maxDistance: 100000, spherical: true}
+).then(function(ninjas){
+res.send(ninjas);
+});
+
+});
+
+
+Postman add params
+
+lng -80
+lat 25
+
+
