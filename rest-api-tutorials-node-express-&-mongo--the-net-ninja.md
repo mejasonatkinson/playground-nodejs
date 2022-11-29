@@ -537,3 +537,17 @@ lng -80
 lat 25
 
 
+
+
+## [REST API Tutorial (Node, Express & Mongo) #15 - Creating a Front-end](https://www.youtube.com/watch?v=fGQFeV32nwE&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=16)
+
+
+index.js
+
+app.use(express.static('public'));
+
+public/index.html
+
+react out of date...
+
+public/styles.css
