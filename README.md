@@ -12,3 +12,4 @@ A place to learn more about nodejs, and try things.
 
 ## Resources
 
+- [ ] [Node.js Tutorial; w3schools](https://www.w3schools.com/nodejs/)
