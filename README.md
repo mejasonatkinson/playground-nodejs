@@ -13,3 +13,13 @@ A place to learn more about nodejs, and try things.
 ## Resources
 
 - [ ] [Node.js Tutorial; w3schools](https://www.w3schools.com/nodejs/)
+
+- [ ] Fireship https://www.youtube.com/watch?v=ENrzD9HAZK4
+
+- [ ] Fireship https://www.youtube.com/watch?v=MBqS1kYzwTc
+
+- [ ] Fireship https://www.youtube.com/watch?v=_oHByo8tiEY
+
+- [ ] Fireship https://www.youtube.com/watch?v=-MTSQjw5DrM
+
+- [ ] Fireship https://www.youtube.com/watch?v=uEVmD6n8Il0
